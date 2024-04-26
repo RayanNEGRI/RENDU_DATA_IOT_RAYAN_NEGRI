@@ -1,0 +1,152 @@
+body {			/* définition du style pour le corps (body) de la page */
+    background-image: url(../Image/Poudlard.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    margin:auto;
+    padding:auto;
+}
+
+/* Le menu de navigation */
+.navbar {
+  overflow: hidden;
+  background-color: #45A29E;
+}
+      
+  /* Liens de navigation */
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+      
+  /* Le menu de sous-navigation */
+  .subnav {
+   float: left;
+   overflow: hidden;
+  }
+      
+  /* Bouton de sous-navigation */
+  .subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+      
+  /* Ajouter une couleur d'arriére-plan bleu aux liens de navigation au survol */
+  .navbar a:hover, .subnav:hover .subnavbtn {
+    background-color: darkslateblue;
+  }
+    
+  /* Ajouter une couleur de fond bleu au survol */
+  .subnav-content a:hover {
+    background-color:darkslateblue;
+    color: black;
+  }
+      
+  /* Lorsque on déplace la souris sur le conteneur subnav, sa ouvre le contenu subnav */
+  .subnav:hover .subnav-content {
+    display: block;
+  }
+  
+  /* Style du contenu de sous-navigation - positionn� en absolu */
+  .subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color:cadetblue;
+    width: 100%;
+    z-index: 1;
+  }
+
+
+  footer{  /*  gére le contenu footer par rapport au haut */
+    margin-top: 30vh;
+  }
+  
+  
+  .footer-basic { /*  conteneur du footer avec sa couleur */
+    padding:40px 0;
+    background-color:#45A29E;
+    color:#4b4c4d;
+  }
+  
+  .footer-basic ul { /*  s'occupe du conteneur des liens iim */
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+  }
+  
+  .footer-basic li { /*  s'occupe individuellement des liens iim */
+    padding:0 10px;
+    color: azure;
+  }
+  
+  .footer-basic ul a {   /*  s'occupe du texte */
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+  }
+  
+  .footer-basic ul a:hover {  /*  s'occupe de opacité */
+    opacity:1;
+  }
+  
+  .footer-basic .social {  /*  permet de s'occuper des icones linkedin et guit hub  pour positionner et autres */
+    text-align:center;
+    padding-bottom:25px;
+  }
+  
+  .footer-basic .social > a { /*  gére aussi les icones */
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #cccccc00;
+    margin:0 8px;
+    color:inherit;
+    opacity:0.75;
+  }
+  
+  .footer-basic .social > a:hover { /*  gére aussi les icones */
+    opacity:0.9;
+  }
+  
+  .footer-basic .copyright { /*  gére mon nom tout en bas */
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color: azure;
+    margin-bottom:0;
+  }
+
+ h4{ /*  pour que le titre de la page se trouve au milieu et de couleur blanche*/
+    color: azure;
+    display: flex;
+    justify-content: center;
+ }
+
+ div.ongletBouton{ /*  s'occupe de positioner en haut à droite sur la navbar les deux boutons initialiser dans le html*/
+  display: flex;
+  justify-content: right;
+  margin-right: 30px;
+}
+
+body {position: relative;} /*  s'occupe du body pour que ces élèments soit en relative*/
+footer {position: absolute; bottom: 0; left: 0; right: 0}  /*  met le footer tout en bas*/

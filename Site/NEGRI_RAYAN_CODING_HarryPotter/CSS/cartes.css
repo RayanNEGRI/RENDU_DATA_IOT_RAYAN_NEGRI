@@ -1,0 +1,421 @@
+body {			/* définition du style pour le body de la page */
+    /*background-image: url(../Image/image_fond_nuage_noir.png);*/
+    background-color:black ;
+    background-size: 100% 100%;
+    margin:auto;
+    padding:auto;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: var(--bs-body-color);
+    text-align: var(--bs-body-text-align);
+}
+
+/* Le menu de navigation */
+.navbarMENU {
+    overflow: hidden;
+    background-color: #45A29E;
+  }
+    
+      
+  /* Liens de navigation */
+  .navbarMENU a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+      
+  /* Le menu de sous-navigation */
+  .subnavMENU {
+   float: left;
+   overflow: hidden;
+   height: 10vh;
+  }
+      
+  /* Bouton de sous-navigation */
+  .subnavMENU .subnavbtnMENU {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+      
+  /* Ajoute une couleur d'arriére-plan bleu aux liens de navigation au survol */
+  .navbarMENU a:hover, .subnavMENU:hover .subnavbtnMENU {
+    background-color: darkslateblue;
+  }
+    
+  /* Ajouter une couleur de fond bleu au survol */
+  .subnav-contentMENU a:hover {
+    background-color:darkslateblue;
+    color: black;
+  }
+      
+  /* Lorsque on déplace la souris sur le conteneur subnav, sa ouvre le contenu subnav */
+  .subnavMENU:hover .subnav-contentMENU {
+    display: block;
+  }
+  
+  /* Style du contenu de sous-navigation - positionné en absolu */
+  .subnav-contentMENU {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color:cadetblue;
+    width: 100%;
+    z-index: 1;
+  }
+ 
+.card {    /* gére l'apparence des cartes et position */
+
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+  padding: 0;
+  perspective: 2500px;
+  background-color: transparent;
+  margin: 60px;
+  flex-direction: column;
+  --bs-card-border-width: 1px;
+  --bs-card-border-color: var(--bs-border-color-translucent);
+  word-wrap: break-word;
+  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+}
+ 
+.cover-image {     /* gére la dimension des images */
+  width: 100%;
+  height: 400px; 
+  object-fit: cover;
+}
+
+.wrapper {    /* gére la dimension de la section pour que l'image soit au bonne endroit */
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+/* quand la souris passe dessus, l'image d'en dessous se penchent en arriére */
+.card:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+/* les contours de l'image en sombre */
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+
+.wrapper::before {  /* sa permet un meilleur effets des ombres */
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(to top,
+      transparent 46%,
+      rgba(12, 13, 19, 0.5) 68%,
+      rgba(12, 13, 19) 97%);
+}
+
+.wrapper::after {   /* sa permet un meilleur effets des ombres */
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(to bottom,
+      transparent 46%,
+      rgba(12, 13, 19, 0.5) 68%,
+      rgba(12, 13, 19) 97%);
+}
+
+.card:hover .wrapper::before,  /* gére opacité */
+.wrapper::after {
+  opacity: 1;
+}
+
+.card:hover .wrapper::after {  /* gére la hauteur */
+  height: 150px;
+}
+
+.title {   /* gére la qualité des noms */
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  transition: transform 0.5s;
+  color: #fff;
+  margin-bottom: 2px;
+  font-family: harryFont;
+
+}
+
+.title_container {    /* gére la position des noms */
+  margin-top: 200px;
+  text-align: center;
+}
+
+.title-sub {       /* gére la position des noms */
+  color: #fff;
+  text-align: center;
+}
+
+.character {       /* gére les characters */
+  display: flex;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.card:hover .character {   /* gére l'animation quand on passe dessus */
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}
+
+.container-card {         /* le conteneur qui gére positions */
+  display: flex;
+  margin-top: 20vh;
+  width: 100%;
+  height: 50vh;
+  display: grid;
+}
+
+.col-md-4 {        /* gére taille aussi*/
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  
+}
+
+/*                      */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1* var(--bs-gutter-y));
+  margin-right: calc(-.5* var(--bs-gutter-x));
+  margin-left: calc(-.5* var(--bs-gutter-x));
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-top: var(--bs-gutter-y);
+}
+
+
+.container{
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(var(--bs-gutter-x)* .5);
+  padding-left: calc(var(--bs-gutter-x)* .5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+
+:root {
+  --bs-blue: #0d6efd;
+  --bs-indigo: #6610f2;
+  --bs-purple: #6f42c1;
+  --bs-pink: #d63384;
+  --bs-red: #dc3545;
+  --bs-orange: #fd7e14;
+  --bs-yellow: #ffc107;
+  --bs-green: #198754;
+  --bs-teal: #20c997;
+  --bs-cyan: #0dcaf0;
+  --bs-black: #000;
+  --bs-white: #fff;
+  --bs-gray: #6c757d;
+  --bs-gray-dark: #343a40;
+  --bs-gray-100: #f8f9fa;
+  --bs-gray-200: #e9ecef;
+  --bs-gray-300: #dee2e6;
+  --bs-gray-400: #ced4da;
+  --bs-gray-500: #adb5bd;
+  --bs-gray-600: #6c757d;
+  --bs-gray-700: #495057;
+  --bs-gray-800: #343a40;
+  --bs-gray-900: #212529;
+  --bs-primary: #0d6efd;
+  --bs-secondary: #6c757d;
+  --bs-success: #198754;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #212529;
+  --bs-primary-rgb: 13,110,253;
+  --bs-secondary-rgb: 108,117,125;
+  --bs-success-rgb: 25,135,84;
+  --bs-info-rgb: 13,202,240;
+  --bs-warning-rgb: 255,193,7;
+  --bs-danger-rgb: 220,53,69;
+  --bs-light-rgb: 248,249,250;
+  --bs-dark-rgb: 33,37,41;
+  --bs-white-rgb: 255,255,255;
+  --bs-black-rgb: 0,0,0;
+  --bs-body-color-rgb: 33,37,41;
+  --bs-body-bg-rgb: 255,255,255;
+  --bs-font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-body-font-family: var(--bs-font-sans-serif);
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --bs-body-color: #212529;
+  --bs-body-bg: #fff;
+  --bs-border-width: 1px;
+  --bs-border-style: solid;
+  --bs-border-color: #dee2e6;
+  --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+  --bs-border-radius: 0.375rem;
+  --bs-border-radius-sm: 0.25rem;
+  --bs-border-radius-lg: 0.5rem;
+  --bs-border-radius-xl: 1rem;
+  --bs-border-radius-2xl: 2rem;
+  --bs-border-radius-pill: 50rem;
+  --bs-link-color: #0d6efd;
+  --bs-link-hover-color: #0a58ca;
+  --bs-code-color: #d63384;
+  --bs-highlight-bg: #fff3cd;
+}
+
+/*    responsive autres       */
+@media (min-width: 1400px) {
+  .container{
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+}
+
+/*    responsive téléphone        */
+
+@media all and (max-device-width: 480px)
+{
+  .container{
+    max-width: 500px;
+  }
+
+}
+
+/*    responsive tablette        */
+
+@media all and (max-device-width: 800px)
+{
+  
+
+
+}
+
+/*                      */
+
+
+div.ongletBouton{  /*  s'occupe de positioner en haut à droite sur la navbar les deux boutons initialiser dans le html*/
+  display: flex;
+  justify-content: right;
+  margin-right: 30px;
+}
+
+footer{    /*  s'occupe de la position du bloc footer*/
+  margin-top: 520vh;
+}
+
+
+.footer-basic { /*  conteneur du footer avec sa couleur */
+  padding:40px 0;
+  background-color:#45A29E;
+  color:#4b4c4d;
+}
+
+.footer-basic ul { /*  s'occupe du conteneur des liens iim */
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li { /*  s'occupe individuellement des liens iim */
+  padding:0 10px;
+  color: azure;
+}
+
+.footer-basic ul a {   /*  s'occupe du texte */
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {  /*  s'occupe de opacité */
+  opacity:1;
+}
+
+.footer-basic .social {  /*  permet de s'occuper des icones linkedin et guit hub  pour positionner et autres */
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a { /*  gére aussi les icones */
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #cccccc00;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover { /*  gére aussi les icones */
+  opacity:0.9;
+}
+
+.footer-basic .copyright { /*  gére mon nom tout en bas */
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color: azure;
+  margin-bottom:0;
+}
+
+
+h2{
+  color: white;
+}
+
+strong{
+  display: flex;
+  justify-content: center;
+}
+

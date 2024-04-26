@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+		<!-- appel de la feuille de style externe -->
+		<link rel="stylesheet" href="CSS/inscription.css">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Site Harry Potter Rayan NEGRI </title>
+</head>
+
+<body> 
+  <header>
+    <!-- Le Menu de Navigation -->
+    <div class="navbar">
+
+        <!-- Deux Onglet de Navigation -->
+          
+              <a href="Accueil.html">Accueil</a>
+          
+          
+        <!-- Onglet De Navigation survolant -->  
+          
+              <div class="subnav">
+                <button class="subnavbtn">Cartes</button>
+                <div class="subnav-content"><!-- apparait quand la personne passe le curseur sur le bouton du dessus --> 
+                  <a href="Dictionnaires.html">Dictionnaires</a>
+                  <a href="BoutiqueOllivander.html">Boutique Ollivander</a>
+                  <a href="SacMagique.html">Sac Magique</a>
+                </div>
+              </div>
+          
+        
+          
+            <!-- Onglet De Navigation --> 
+              <div class="subnav">
+                <button class="subnavbtn">Compte</button>
+                <div class="subnav-content">
+                 <a href="Connexion.html">Connexion</a>
+                 <a href="Inscription.html">Inscription</a>
+                 <a href="info.html">Informations</a>
+              
+                </div>
+              </div>
+
+              <div class="ongletBouton"><!-- bouton qui permet de se rediriger directement -->
+               <form action="Inscription.html">
+                 <button type="submit">Créer un compte</button>
+               </form>
+               <form action="Connexion.html">
+                 <button type="submit">Se Connecter</button>
+               </form>
+              </div>
+
+    </div>
+  </header>
+  
+  <main>
+    
+      <div class="container"> <!-- contient le formulaire -->
+        <div class="screen">
+          <div class="screen__content">
+            <form class="login"  method="POST">
+              <div class="login__field"><!-- les informations de base avec id pour vérifier sur le js si c'est respecter  -->
+                <input type="text" id="pseudo" class="login__input"  name="login" placeholder="Identifiant" required="required">
+              </div>
+              <div class="login__field">
+                <input type="password" id="password" class="login__input" name="mdp"  placeholder="mot de passe" required="required">
+                <div id="mdpError"></div>
+              </div>
+              <div class="login__field">
+                <input type="email" id="mail"  class="login__input" name="mail"  placeholder="mail" required="required">
+              </div>
+              <div><h6>Choix Races : </h6><!-- label avec un type radio un seul peux être côché -->
+                <label for="h">Humains</label>
+                <input type="radio" name="genre" id="h">
+          <!--     -->
+                <label for="g">Loup-Garou</label>
+                <input type="radio" name="genre" id="g">
+          <!--     -->
+                <label for="e">Demi-Géant</label>
+                <input type="radio" name="genre" id="e">
+          <!--     -->
+                <label for="v">Vélane</label>
+                <input type="radio" name="genre" id="v">
+          <!--     -->
+                <label for="go">Gobelin</label>
+                <input type="radio" name="genre" id="go">
+          <!--     -->
+                <label for="de">Demi-Elfe</label>
+                <input type="radio" name="genre" id="de">
+          <!--     -->
+              </div>
+              <div> <h6>Choix Sang : </h6>
+                <select name="classe3" id="sel" required> <!-- un select avec plusieurs informations qui déroule une seul peux être choisis-->
+                  <option style="display:none;" value="">&nbsp;</option> <!-- pour que la première option du select sois vide-->
+                  <option value="Sang-Mêlé">Sang-Mêlé</option>
+                  <option value="Sang-Pur">Sang-Pur</option>
+                  <option value="Né-Moldu">Né-Moldu</option>
+                </select>
+              </div>
+              <button class="button login__submit"> <!-- bouton qui envoye le formulaire et si il est bon en vérifiant avec le id sur le js avec un message qui prévient si correct ou non-->
+                <span  id="soumettre" class="button__text"  >S'INSCRIRE</span>
+              </button>
+              
+              
+            </form>
+            
+          </div>
+          <div class="screen__background">    <!-- couleur du login-->
+            <span class="screen__background__shape screen__background__shape4"></span>
+            <span class="screen__background__shape screen__background__shape3"></span>		
+            <span class="screen__background__shape screen__background__shape2"></span>
+            <span class="screen__background__shape screen__background__shape1"></span>
+          </div>		
+        </div>
+      </div>
+
+
+
+
+
+  </main>
+
+
+  <footer>
+    <!-- footer qui donne les informations du site-->
+    <div class="footer-basic">
+      <!-- image en dessous de deux réseaux quand on clique dessus sa nous redirige sur mon profil-->
+          <div class="social"><a href="https://www.linkedin.com/in/rayan-negri-17a9b8237/"><i><img src="Image/linkedin-icon.png" alt="Image Linkedin"></i></a> <a href="https://github.com/RayanNEGRI"><i><img src="Image/github-icon.png" alt="Image GuitHub"></i></a></div>
+          <ul class="list-inline">
+              <li class="list-inline-item"><a href="https://www.iim.fr/">IIM Etudiant</a></li>
+              <li class="list-inline-item"><a href="https://www.devinci.fr/">DeVinci Etudiant</a></li>
+          </ul>
+          <p class="copyright">Rayan NEGRI © 2023</p>
+      
+    </div>
+
+  </footer>
+
+  <!-- Appel du script --> 
+  <script src="JS/inscription.js"></script>
+</body>
+</html>
+
